@@ -64,4 +64,22 @@ public class StudentController {
         }
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
+
+    // custom endpoints to retrevie all students with specific year
+    @GetMapping("/year/{year}")
+    public List<Student> getStudentsByYearOfEnrollment(@PathVariable Integer year) {
+        return studentService.getStudentsByYearOfEnrollment(year);
+    }
+
+    // Custom endpoint to get the department by student ID
+    @GetMapping("/{id}/department")
+    public String getDepartmentById(@PathVariable Long id) {
+        return studentService.getDepartmentById(id);
+    }
+
+    @DeleteMapping("/year/{year}")
+    public void removeByYearOfEnrollment(@PathVariable Integer yearOfEnrollment) {
+        studentService.removeByYearOfEnrollment(yearOfEnrollment);
+    }
+
 }

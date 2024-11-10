@@ -46,4 +46,21 @@ public class StudentServiceImpl implements StudentService {
         }
         return false; // Return false if the student was not found
     }
+
+    @Override
+    public List<Student> getStudentsByYearOfEnrollment(Integer yearOfEnrollment) {
+        return studentRepository.findByYearOfEnrollment(yearOfEnrollment);
+    }
+
+    @Override
+    public String getDepartmentById(Long id) {
+        return studentRepository.findDepartmentById(id);
+    }
+
+    @Override
+    public void removeByYearOfEnrollment(Integer yearOfEnrollment) {
+        studentRepository.deleteByYearOfEnrollment(yearOfEnrollment);
+
+    }
+
 }

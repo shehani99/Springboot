@@ -31,7 +31,7 @@ public class Student {
     private String department;
 
     @Column(name = "year_of_enrollment")
-    private int yearOfEnrollment;
+    private Integer yearOfEnrollment;
 
     // //getters
     // public String getdepartment(){;
