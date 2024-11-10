@@ -14,4 +14,12 @@ public interface StudentService {
     Student updateStudent(Long id, Student student);
 
     Boolean deleteStudent(Long id);
+
+    // custom methods
+    List<Student> getStudentsByYearOfEnrollment(Integer yearOfEnrollment);
+
+    String getDepartmentById(Long id);
+
+    void removeByYearOfEnrollment(Integer yearOfEnrollment);
+
 }
